@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cost Computation</title>
+</head>
+<body>
+    <form method="post" action="{% url 'compute' %}" enctype = 'multipart/form-data'>
+        {% csrf_token %}
+        <div>
+            <label for="size">Size of Video in MB</label>
+            <input type="text" id="size" placeholder="In MB" name = "size">
+        </div>
+        <br>
+        <div>
+            <label for="length"> Video Duration in minutes.</label>
+            <input type="text" name = "length" id="length" placeholder="In minutes">
+        </div>
+        <br>
+        <div>
+            <label for="vid_type">File type</label>
+            <input type="text" name = "vid_type" id="vid_type" placeholder="EX. 'video/mp4'">
+        </div>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    
+</body>
+</html>
